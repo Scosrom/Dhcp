@@ -1,9 +1,9 @@
 # DHCP - DHCP-RELAY - CLIENTE
 
 
-# DHCP 
+## DHCP 
 
-## Tarjetas:
+### Tarjetas:
 
 - Adaptador puente.
 - Red interna (red0)
@@ -116,9 +116,9 @@ sudo systemctl restart networking
 sudo systemctl restart isc-dhcp-server
 
 
-# dhcp relay
+## dhcp relay
 
-## Tarjetas
+### Tarjetas
 - Red interna (red0)
 - Red interna (red0)
 
@@ -169,9 +169,9 @@ sudo sysctl -p
 sudo systemctl restart isc-dhcp-relay
 sudo systemctl restart networking.service
 
-# Cliente 
+## Cliente 
 
-## Tarjetas
+### Tarjetas
 - red interna (red0)
 
 ### **1. Configuramos la red**
