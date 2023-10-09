@@ -2,8 +2,8 @@
 
 ## Tarjetas:
 
-Adaptador puente.
-Red interna (red0)
+- Adaptador puente.
+- Red interna (red0)
 
 ### **1. Primero configuramos la red.**
 
@@ -116,8 +116,8 @@ sudo systemctl restart isc-dhcp-server
 # dhcp relay
 
 ## Tarjetas
-Red interna (red0)
-Red interna (red0)
+- Red interna (red0)
+- Red interna (red0)
 
 
 ### **1. Configurar la red.** 
@@ -169,7 +169,7 @@ sudo systemctl restart networking.service
 # Cliente 
 
 ## Tarjetas
-red interna (red0)
+- red interna (red0)
 
 ### **1. Configuramos la red**
 
