@@ -1,11 +1,11 @@
-DHCP
+# DHCP
 
-Tarjetas:
+##Tarjetas:
 
 Adaptador puente.
 Red interna (red0)
 
-Primero configuramos la red.
+###**1. Primero configuramos la red.**
 
 sudo nano /etc/network/interfaces
 
@@ -14,7 +14,7 @@ Es importante usar 192.168.1.x/24 para la red interna y 172.26.x.x para el adapt
 ![image](https://github.com/Scosrom/Dhcp/assets/114906778/2ccfcafd-3088-4a6c-a085-6500f3a320b1)
 
 
-Configurar dns:
+###**2. Configurar dns:**
 
 nano  /etc/resolv.conf
 
@@ -33,7 +33,7 @@ sudo systemctl status networking
 
 
 
-Configuramos DHCP
+###**3. Configuramos DHCP**
 
 sudo apt update
 sudo apt install isc-dhcp-server
@@ -57,7 +57,7 @@ sudo nano /etc/dhcp/dhcpd.conf
 La ip de mi servidor es 192.168.1.1, por eso la ponemos en option routers.
 He dejado la ip 192.168.1.2 libre por si necesitamos un servidor de respaldo (failover).
 
-Asignamos tarjeta
+#**4. Asignamos tarjeta**
 
 sudo nano /etc/default/isc-dhcp-server
 
@@ -72,7 +72,7 @@ Configuramos para que el cliente tenga salida a internet (En este servidor dhcp)
 
 
 
-Habilitar el Reenvío de Paquetes:
+#**5.Habilitar el Reenvío de Paquetes:**
 Abre el archivo de configuración de sysctl:
 
 
@@ -91,7 +91,7 @@ Guarda y cierra el archivo. Luego, aplica los cambios con el siguiente comando:
 sudo sysctl -p
 
 
-Configurar NAT (Network Address Translation):
+#**6.Configurar NAT (Network Address Translation):**
 Utiliza iptables para configurar NAT en la interfaz de red que tiene acceso a Internet (puente). Esto permitirá que el tráfico de la red interna se traduzca adecuadamente para salir a Internet.
 Ejecuta los sigu
 ientes comandos:
@@ -113,20 +113,21 @@ sudo systemctl restart networking
 sudo systemctl restart isc-dhcp-server
 
 
-dhcp relay
+# dhcp relay
 
+## Tarjetas
 Red interna (red0)
 Red interna (red0)
 
 
-Configurar la red. 
+###**1. Configurar la red.** 
 
 ![image](https://github.com/Scosrom/Dhcp/assets/114906778/4e10e5b7-97d8-4c9c-bf4c-0bcdbfe5b6ed)
 
 
 
 
-Instalamos servidor dhcp-relay
+###**2. Instalamos servidor dhcp-relay**
 
 apt install isc-dhcp-relay
 
@@ -150,7 +151,7 @@ sudo systemctl restart isc-dhcp-relay
 
 sudo systemctl status isc-dhcp-relay
 
-Configurar para que el cliente salga a internet. 
+###**3. Configurar para que el cliente salga a internet. **
 
 En este servidor no hay que usar los comandos iptables, solo haría falta lo siguiente:
 
@@ -165,11 +166,12 @@ sudo sysctl -p
 sudo systemctl restart isc-dhcp-relay
 sudo systemctl restart networking.service
 
-Cliente 
+# Cliente 
 
+## Tarjetas
 red interna (red0)
 
-Configuramos la red
+###**1. Configuramos la red**
 
 nano /etc/network/interfaces
 
