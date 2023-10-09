@@ -151,7 +151,7 @@ sudo systemctl restart isc-dhcp-relay
 
 sudo systemctl status isc-dhcp-relay
 
-### **3. Configurar para que el cliente salga a internet. **
+### ** 3. Configurar para que el cliente salga a internet. **
 
 En este servidor no hay que usar los comandos iptables, solo haría falta lo siguiente:
 
