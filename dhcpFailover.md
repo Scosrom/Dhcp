@@ -29,6 +29,8 @@ Puedes usar los servidores DNS de Google:
 
 
 <code>sudo systemctl restart networking </code>
+
+
 <code>sudo systemctl status networking </code>
 
 
@@ -36,6 +38,7 @@ Puedes usar los servidores DNS de Google:
 ## Servidor hdcp
 
 <code> sudo apt update </code>
+
 <code> sudo apt install isc-dhcp-server </code>
 
 
@@ -74,7 +77,18 @@ Indica la tarjeta de red asignada al DHCP.
 
 Verifica con systemctl.
 
-El anfitrión tiene una red interna a la que se conecta la máquina del cliente. Asegúrate de configurar los interfaces en VirtualBox. Una vez configurado, abre la máquina.
+## Configurar el Cliente:
+
+1. En VirtualBox, asegúrate de configurar la red interna correctamente para que la máquina cliente pueda conectarse. Abre la máquina virtual una vez que la configuración esté lista.
+
+2. Asegúrate de que el cliente obtenga su configuración de red a través del servidor DHCP. Además, verifica que la puerta de enlace esté configurada correctamente, utilizando la interfaz interna del servidor Debian.
+
+**Reinicia los Servicios:**
+
+
+<code> sudo systemctl restart networking </code>
+
+<code> sudo systemctl restart isc-dhcp-server </code>
 
 ![image](https://github.com/Scosrom/dhcp-dhcpRelay/assets/114906778/4059dd94-52d9-48f3-b8eb-0a7ad0b420d3)
 
@@ -115,15 +129,7 @@ Para hacer que estos cambios sean persistentes después del reinicio, puedes ins
 <code>  sudo apt-get install iptables-persistent </code>
 
 
-## Configurar el Cliente:
-Asegúrate de que el cliente obtenga su configuración de red a través del servidor DHCP y que tenga la puerta de enlace configurada correctamente (que debe ser la interfaz interna del servidor Debian).
 
-**Reinicia los Servicios:**
-
-Reinicia los servicios de red y DHCP:
-
-<code> sudo systemctl restart networking 
-sudo systemctl restart isc-dhcp-server </code>
 
 
 
