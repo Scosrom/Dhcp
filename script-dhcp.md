@@ -1,7 +1,18 @@
 #!/bin/bash
 
+# Configuracion de la red
 
-# Preguntar por los datos de configuración
+read -p "Ingresa la tarjeta de red (enp0s3) red interna:" tredI
+read -p "Ingresa la IP red interna: " ipIN
+read -p "Ingresa la netmask red interna: " mredIN
+
+read -p "Ingresa la tarjeta de red (enp0s3) adaptador puente:" tredP
+read -p "Ingresa la IP adaptador puente:" ipP
+read -p "Ingresa la netmask adaptador puente:" mP
+read -p "Ingresa la gateway adaptador puente:"  gatP
+
+
+# Preguntar por los datos de configuración dhcp
 read -p "Ingresa la subnet (ej. 192.168.1.0): " subnet
 read -p "Ingresa la netmask (ej. 255.255.255.0): " netmask
 read -p "Ingresa el router (ej. 192.168.1.1): " router
@@ -10,6 +21,21 @@ read -p "Ingresa el rango de direcciones (ej. 192.168.1.4 192.168.1.10): " addre
 read -p "Ingresa un domain-name 'example.org': " domain
 read -p "Ingresa un domain-name-servers ns1.example.org, ns2.example.org; :" dname
 read -p "Ingresa la tarjeta de red (adaptador puente)" : interfaz
+
+# Configurar la red
+
+sudo bash -c "cat <<EOL > /etc/network/interfaces
+
+auto $tredI
+iface $tredI inet static
+address $ipIN
+netmask $mredIN
+
+auto $tredP
+iface $tredP inet static
+address $ipP
+netmask $mP
+gateway $gatP"
 
 
 # Instalar el servidor DHCP
