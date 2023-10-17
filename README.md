@@ -18,10 +18,10 @@ En resumen, DHCP y DHCP Failover son herramientas esenciales en la gestión de d
 
 [Configuracion dhcp con Failover](dhcpFailover.md)
 
+[Configuracion dhcp con dhcp relay](dhcpRelay.md)
+
+[Script para la configuración dhcp](script-dhcp.md)
 
 
-dhcpRelay.md
-Rename dhcpRelay to dhcpRelay.md
-25 minutes ago
-script-dhcp.md
+
 
