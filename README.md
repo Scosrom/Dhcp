@@ -7,11 +7,11 @@ El **DHCP Failover** (o conmutación por fallo de DHCP) es una característica q
 El **DHCP Relay (Relevo DHCP)** es una función que facilita la distribución de direcciones IP y configuraciones de red en redes que están divididas en múltiples subredes o segmentos separados. En lugar de configurar un servidor DHCP en cada segmento de red, puedes utilizar un DHCP Relay para reenviar las solicitudes de configuración desde las subredes hacia un servidor DHCP centralizado
 
 
-[Configuracion dhcp con Failover](dhcpFailover.md)
+- [Configuracion dhcp con Failover](dhcpFailover.md)
 
-[Configuracion dhcp con dhcp relay](dhcpRelay.md)
+- [Configuracion dhcp con dhcp relay](dhcpRelay.md)
 
-[Script para la configuración dhcp](script-dhcp.md)
+- [Script para la configuración dhcp](script-dhcp.md)
 
 
 
