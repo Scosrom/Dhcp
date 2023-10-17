@@ -16,3 +16,12 @@ La elección del método de conmutación por fallo depende de los requisitos de 
 
 En resumen, DHCP y DHCP Failover son herramientas esenciales en la gestión de direcciones IP en una red, y el failover es una estrategia importante para garantizar la disponibilidad del servicio en caso de fallos.
 
+[Configuracion dhcp con Failover](dhcp-dhcpRelay/dhcpFailover.md)
+
+
+
+dhcpRelay.md
+Rename dhcpRelay to dhcpRelay.md
+25 minutes ago
+script-dhcp.md
+
