@@ -1,3 +1,22 @@
+El **DHCP Relay (Relevo DHCP)** es una función que facilita la distribución de direcciones IP y configuraciones de red en redes que están divididas en múltiples subredes o segmentos separados. En lugar de configurar un servidor DHCP en cada segmento de red, puedes utilizar un DHCP Relay para reenviar las solicitudes de configuración desde las subredes hacia un servidor DHCP centralizado.
+
+El proceso funciona de la siguiente manera:
+
+Un cliente en una subred emite una solicitud DHCP (Discover).
+
+En lugar de ser atendida por un servidor DHCP local, la solicitud es interceptada por un agente DHCP Relay.
+
+El agente DHCP Relay toma la solicitud y la reenvía a un servidor DHCP ubicado en una subred diferente, a través de mensajes llamados "Relay Forward" (Relevo hacia adelante).
+
+El servidor DHCP recibe la solicitud y responde con la configuración adecuada.
+
+La respuesta del servidor DHCP es reenviada de nuevo al cliente a través del agente DHCP Relay.
+
+Esta operación permite que los clientes en diferentes subredes obtengan direcciones IP y configuraciones de red de un servidor DHCP centralizado, incluso si no están en la misma red física.
+
+El uso del DHCP Relay es beneficioso en entornos donde la administración centralizada de direcciones IP es esencial, ya que simplifica la configuración y administración de la red al permitir que un servidor DHCP sirva a múltiples subredes.
+
+
 ## DHCP 
 
 ### Tarjetas:
